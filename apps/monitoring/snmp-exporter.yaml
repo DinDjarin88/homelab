@@ -95,7 +95,7 @@ metadata:
   name: snmp-ups
   namespace: monitoring
   labels:
-    release: kube-prom
+    release: kube-prometheus-stack
 spec:
   endpoints:
   - port: http
