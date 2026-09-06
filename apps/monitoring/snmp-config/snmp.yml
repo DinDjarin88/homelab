@@ -1,3 +1,8 @@
+auths:
+  public_v2:
+    community: public
+    version: 2
+
 modules:
   ups_mib:
     walk:
