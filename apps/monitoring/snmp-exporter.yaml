@@ -104,7 +104,7 @@ spec:
     path: /snmp
     params:
       module: [ups_mib]
-        auth: [public_v2]
+      auth: [public_v2]
       target: ["192.168.6.111"]
     relabelings:
     - sourceLabels: [__param_target]
