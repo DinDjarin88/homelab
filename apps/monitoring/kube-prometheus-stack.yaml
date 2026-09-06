@@ -15,14 +15,24 @@ spec:
           adminPassword: "homelabgrafana"
           ingress:
             enabled: false
+          service:
+            type: NodePort
+            nodePort: 30030
           persistence:
             enabled: true
             storageClassName: longhorn
             size: 5Gi
+          grafana.ini:
+            server:
+              root_url: "http://192.168.6.17:30030"
 
         prometheus:
+          service:
+            type: NodePort
+            nodePort: 30090
           prometheusSpec:
             retention: 30d
+            externalUrl: "http://192.168.6.17:30090"
             resources:
               requests:
                 cpu: 200m
@@ -39,7 +49,11 @@ spec:
                       storage: 20Gi
 
         alertmanager:
+          service:
+            type: NodePort
+            nodePort: 30093
           alertmanagerSpec:
+            externalUrl: "http://192.168.6.17:30093"
             storage:
               volumeClaimTemplate:
                 spec:
