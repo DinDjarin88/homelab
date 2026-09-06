@@ -57,8 +57,6 @@ spec:
       labels:
         app: snmp-exporter
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: k3s-elitedesk-1
       containers:
       - name: snmp-exporter
         image: prom/snmp-exporter:latest
