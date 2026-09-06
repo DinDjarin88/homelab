@@ -5,6 +5,10 @@ metadata:
   namespace: monitoring
 data:
   snmp.yml: |
+    auths:
+      public_v2:
+        community: public
+        version: 2
     modules:
       ups_mib:
         walk:
@@ -100,6 +104,7 @@ spec:
     path: /snmp
     params:
       module: [ups_mib]
+        auth: [public_v2]
       target: ["192.168.6.111"]
     relabelings:
     - sourceLabels: [__param_target]
